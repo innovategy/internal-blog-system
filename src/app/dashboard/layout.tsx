@@ -1,6 +1,7 @@
 import { auth } from "@/lib/auth";
 import { redirect } from "next/navigation";
 import React from "react";
+import SignOutButton from "@/components/SignOutButton";
 
 export default async function DashboardLayout({
   children,
@@ -28,14 +29,7 @@ export default async function DashboardLayout({
               <span className="text-sm text-gray-700 mr-4">
                 {session.user?.name || session.user?.email}
               </span>
-              <form action="/api/auth/signout" method="post">
-                <button
-                  type="submit"
-                  className="text-sm px-3 py-1 rounded-md border border-gray-300 hover:bg-gray-100"
-                >
-                  Sign out
-                </button>
-              </form>
+              <SignOutButton />
             </div>
           </div>
         </div>
