@@ -103,9 +103,11 @@ AUTH_SECRET="your-secret-key"
 
 ```bash
 npx prisma migrate dev
-npx prisma generate
+npx prisma generate  # Generates the Prisma client in src/generated/prisma
 npx prisma db seed
 ```
+
+Note: The Prisma client is generated in the `src/generated/prisma` directory and is excluded from version control. Each developer must run `npx prisma generate` after cloning the repository.
 
 5. Run the development server
 
